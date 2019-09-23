@@ -20,10 +20,11 @@ const winningCombinations = [
     [1, 4, 7],
     [2, 5, 8],
     [0, 4, 8],
-    [3, 4, 6]
+    [2, 4, 6]
 ];
 // grabbing the id square from my html doc
 const squares = document.querySelectorAll('.sqaure');
+// variables for counters and messages
 var counter;
 var sqaureCount;
 var winningMeassage;
@@ -43,18 +44,14 @@ document.getElementById("gameBoard").addEventListener('click', onClick);
 // when you click a square on the board, it will place an X or O in the square
 function onClick(e) {
     console.log(e.target);
-    //
-    // if (e.target === this) {
-    //     return
-    // }
     // If the current player is = 0, it will place an X in the square and change current player to 1
     if (currentPlayer == 0) {
         e.target.textContent = "X";
         player1[e.target.id] = true;
-        // console.log(playerSelections);
         if (youHaveWon()) {
             stopGame();
         }
+
         // if (youHaveTied()) {
         //     stopGame();
         // };
@@ -66,11 +63,13 @@ function onClick(e) {
     else {
         e.target.textContent = "O";
         player2[e.target.id] = true;
+
         // console.log(playerSelections);
-        
+
         if (youHaveWon()) {
             stopGame();
         }
+
         // if (youHaveTied()) {
         //     stopGame();
         // };
@@ -79,8 +78,11 @@ function onClick(e) {
     }
 };
 
-
-
+function alreadyClicked(e) {
+    if (e.target.textContent === "X" || e.target.textContent === "O") {
+        document.getElementById("gameBoard").removeEventListener('click', onClick);
+    }
+}
 
 function youHaveWon() {
     // when current player is at 0, it is huPlayers turn
@@ -108,7 +110,7 @@ function youHaveWon() {
                 return true;
             }
         }
-        
+
     }
     return false;
 };
@@ -116,18 +118,20 @@ function youHaveWon() {
 
 // function youHaveTied() {
 
-//     var sqaureCount = 0;
-//     while(sqaureCount < 9) {
-//         if(squares[sqaureCount].textContent === 'X' || squares[sqaureCount].textContent === 'O') {
+//     sqaureCount = 0;
+//     while (sqaureCount < 9) {
+//         if (squares[sqaureCount].textContent === 'X' || squares[sqaureCount].textContent === 'O') {
 //             sqaureCount++
 //         } else {
 //             return
 //         }
-//         if(sqaureCount === 9) {
+//         if (sqaureCount === 9) {
 //             console.log("Tie Game");
-            
+
 //         }
-//     }
+// document.getElementById("gameBoard").removeEventListener('click', onClick);
+// tieMessage = document.getElementById("tie-message").textContent = "You've Tied!"
+// }
 //     if (true) {
 //         (document.getElementById("0").innerText !== '')
 //         &&
@@ -147,9 +151,7 @@ function youHaveWon() {
 //         &&
 //         (document.getElementById("8").innerText !== '')
 // };
-    
-    // document.getElementById("gameBoard").removeEventListener('click', onClick);
-    // tieMessage = document.getElementById("tie-message").textContent = "You've Tied!"
+
 
 // };
 
