@@ -1,3 +1,48 @@
-h1 {
-  color: purple;
+body {
+    text-align: center;
+    background-image: repeating-linear-gradient(to bottom right, rgb(53, 11, 243), turquoise);
 }
+
+p {
+    padding-bottom: 50px;
+}
+
+h2 {
+    padding: 15px;
+}
+
+table {
+    border: none;
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 80px;
+    cursor: pointer;
+}
+
+td {
+    border: 2px solid black;
+    height: 150px;
+    width: 150px;
+}
+button {
+    margin: 30px;
+}
+
+#top {
+    border-top: hidden;
+    border-left: hidden;
+    border-right: hidden;
+}
+
+#middle {
+    border-left: hidden;
+    border-right: hidden;
+}
+#bottom {
+    border-bottom: hidden;
+    border-left: hidden;
+    border-right: hidden;
+}
+
+
