@@ -51,10 +51,6 @@ function onClick(e) {
         if (youHaveWon()) {
             stopGame();
         }
-
-        // if (youHaveTied()) {
-        //     stopGame();
-        // };
         // this acts as a switch turn function, telling the computer that when the current player at 0 clicks a square, turning it to X,
         //it then checks the winGame function to see if that play has won, if they haven't then it changes the current play to 1
         currentPlayer = 1;
@@ -69,10 +65,6 @@ function onClick(e) {
         if (youHaveWon()) {
             stopGame();
         }
-
-        // if (youHaveTied()) {
-        //     stopGame();
-        // };
 
         currentPlayer = 0;
     }
@@ -114,46 +106,6 @@ function youHaveWon() {
     }
     return false;
 };
-
-
-// function youHaveTied() {
-
-//     sqaureCount = 0;
-//     while (sqaureCount < 9) {
-//         if (squares[sqaureCount].textContent === 'X' || squares[sqaureCount].textContent === 'O') {
-//             sqaureCount++
-//         } else {
-//             return
-//         }
-//         if (sqaureCount === 9) {
-//             console.log("Tie Game");
-
-//         }
-// document.getElementById("gameBoard").removeEventListener('click', onClick);
-// tieMessage = document.getElementById("tie-message").textContent = "You've Tied!"
-// }
-//     if (true) {
-//         (document.getElementById("0").innerText !== '')
-//         &&
-//         (document.getElementById("1").innerText !== '')
-//         &&
-//         (document.getElementById("2").innerText !== '')
-//         &&
-//         (document.getElementById("3").innerText !== '')
-//         &&
-//         (document.getElementById("4").innerText !== '')
-//         &&
-//         (document.getElementById("5").innerText !== '')
-//         &&
-//         (document.getElementById("6").innerText !== '')
-//         &&
-//         (document.getElementById("7").innerText !== '')
-//         &&
-//         (document.getElementById("8").innerText !== '')
-// };
-
-
-// };
 
 
 function stopGame() {
